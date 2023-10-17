@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="日本の都道府県とタイピングを同時に学ぶアプリです。">
+    <title>都道府県タイピング</title>
+    <meta property="og:title" content="都道府県タイピング">
+    <meta property="og:site_name" content="都道府県タイピング">
+    <meta property="og:description" content="日本の都道府県とタイピングを同時に学ぶアプリです。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marmooo.github.io/prefectures-typing/">
+    <meta property="og:image" content="https://marmooo.github.io/prefectures-typing/favicon/apple-touch-icon.png">
+    <meta name="twitter:card" content="summary">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2179JXDYY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F2179JXDYY');
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/prefectures-typing/sw.js');
+        });
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/prefectures-typing/favicon/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/prefectures-typing/favicon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/prefectures-typing/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/prefectures-typing/favicon/site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+/*!
+ * 
+ *   simple-keyboard v3.4.52
+ *   https://github.com/hodgef/simple-keyboard
+ *
+ *   Copyright (c) Francisco Hodge (https://github.com/hodgef) and project contributors.
+ *
+ *   This source code is licensed under the MIT license found in the
+ *   LICENSE file in the root directory of this source tree.
+ *
+ */.hg-theme-default{background-color:#ececec;border-radius:5px;box-sizing:border-box;font-family:HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;overflow:hidden;padding:5px;touch-action:manipulation;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:100%}.hg-theme-default .hg-button span{pointer-events:none}.hg-theme-default button.hg-button{border-width:0;font-size:inherit;outline:0}.hg-theme-default .hg-button{display:inline-block;flex-grow:1}.hg-theme-default .hg-row{display:flex}.hg-theme-default .hg-row:not(:last-child){margin-bottom:5px}.hg-theme-default .hg-row .hg-button:not(:last-child){margin-right:5px}.hg-theme-default .hg-row .hg-button-container{margin-right:5px}.hg-theme-default .hg-row>div:last-child{margin-right:0}.hg-theme-default .hg-row .hg-button-container{display:flex}.hg-theme-default .hg-button{-webkit-tap-highlight-color:rgba(0,0,0,0);align-items:center;background:#fff;border-bottom:1px solid #b5b5b5;border-radius:5px;box-shadow:0 0 3px -1px rgba(0,0,0,.3);box-sizing:border-box;cursor:pointer;display:flex;height:40px;justify-content:center;padding:5px}.hg-theme-default .hg-button.hg-standardBtn{width:20px}.hg-theme-default .hg-button.hg-activeButton{background:#efefef}.hg-theme-default.hg-layout-numeric .hg-button{align-items:center;display:flex;height:60px;justify-content:center;width:33.3%}.hg-theme-default .hg-button.hg-button-numpadadd,.hg-theme-default .hg-button.hg-button-numpadenter{height:85px}.hg-theme-default .hg-button.hg-button-numpad0{width:105px}.hg-theme-default .hg-button.hg-button-com{max-width:85px}.hg-theme-default .hg-button.hg-standardBtn.hg-button-at{max-width:45px}.hg-theme-default .hg-button.hg-selectedButton{background:rgba(5,25,70,.53);color:#fff}.hg-theme-default .hg-button.hg-standardBtn[data-skbtn=".com"]{max-width:82px}.hg-theme-default .hg-button.hg-standardBtn[data-skbtn="@"]{max-width:60px}.hg-candidate-box{background:#ececec;border-bottom:2px solid #b5b5b5;border-radius:5px;display:inline-flex;margin-top:-10px;max-width:272px;position:absolute;transform:translateY(-100%);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ul.hg-candidate-box-list{display:flex;flex:1;list-style:none;margin:0;padding:0}li.hg-candidate-box-list-item{align-items:center;display:flex;height:40px;justify-content:center;width:40px}li.hg-candidate-box-list-item:hover{background:rgba(0,0,0,.03);cursor:pointer}li.hg-candidate-box-list-item:active{background:rgba(0,0,0,.1)}.hg-candidate-box-prev:before{content:"◄"}.hg-candidate-box-next:before{content:"►"}.hg-candidate-box-next,.hg-candidate-box-prev{align-items:center;background:#d0d0d0;color:#969696;cursor:pointer;display:flex;padding:0 10px}.hg-candidate-box-next{border-bottom-right-radius:5px;border-top-right-radius:5px}.hg-candidate-box-prev{border-bottom-left-radius:5px;border-top-left-radius:5px}.hg-candidate-box-btn-active{color:#444}
+    </style>
+    <style>
+      #mapContainer { width:auto; height:calc(100vh - 320px); }
+      #map { width:100%; height:100%; }
+      #counter {
+        font-size:10rem; width:12rem; height:12rem; line-height:12rem; border-radius: 50%;
+        background:tomato; color:black; margin:auto; }
+      .emoji { font-size:5rem; }
+      @media (max-width: 768px) {
+        .emoji { font-size:3rem; }
+      }
+      #typePanel { font-variant-ligatures:none; word-wrap: break-word; }
+      #keyboard { touch-action:manipulation; }
+      .hg-theme-default .hg-button { height:50px; font-size:2.5rem; }
+      .hg-theme-default .hg-button.hg-standardBtn[data-skbtn="🌏"] { max-width:80px; }
+      .inputed { color:var(--bs-gray-500); }
+      .guide { background:var(--bs-blue) !important; color:#fff !important; }
+      html[data-bs-theme="dark"] .favicon { filter: invert(1) hue-rotate(180deg); }
+      html[data-bs-theme="dark"] #keyboard { background:var(--bs-gray-900); }
+      html[data-bs-theme="dark"] .hg-button { background:#000; }
+      html[data-bs-theme="dark"] .inputed { color:var(--bs-gray-800); }
+    </style>
+    <script data-ad-client="ca-pub-6459713332128733" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav id="headerNav" class="navbar navbar-expand">
+        <div class="container flex-wrap">
+          <a class="navbar-brand" href="/prefectures-typing/">
+            <img class="favicon" alt="" src="/prefectures-typing/favicon/favicon.svg" width="32" height="32">
+            都道府県タイピング
+          </a>
+          <div class="navbar-nav">
+            <button title="物理/仮想キーボード" id="virtualKeyboard" class="btn p-0 ms-1" type="button">
+              <svg id="virtualKeyboardOn" class="d-none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 3H4c-1.1 0-1.99.9-1.99 2L2 15c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 3h2v2h-2V6zm0 3h2v2h-2V9zM8 6h2v2H8V6zm0 3h2v2H8V9zm-1 2H5V9h2v2zm0-3H5V6h2v2zm9 7H8v-2h8v2zm0-4h-2V9h2v2zm0-3h-2V6h2v2zm3 3h-2V9h2v2zm0-3h-2V6h2v2zm-7 15l4-4H8l4 4z"/></svg>
+              <svg id="virtualKeyboardOff" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><g><path d="M21,14c0-0.55-0.45-1-1-1h-2v2h2C20.55,15,21,14.55,21,14z"/><path d="M20,17h-2v2h2c0.55,0,1-0.45,1-1C21,17.45,20.55,17,20,17z"/><path d="M16,12h-2c-1.1,0-2,0.9-2,2h-1c-0.55,0-1,0.45-1,1v2c0,0.55,0.45,1,1,1h1c0,1.1,0.9,2,2,2h2c0.55,0,1-0.45,1-1v-6 C17,12.45,16.55,12,16,12z"/><path d="M5,13c0-1.1,0.9-2,2-2h1.5c1.93,0,3.5-1.57,3.5-3.5S10.43,4,8.5,4H5C4.45,4,4,4.45,4,5c0,0.55,0.45,1,1,1h3.5 C9.33,6,10,6.67,10,7.5S9.33,9,8.5,9H7c-2.21,0-4,1.79-4,4c0,2.21,1.79,4,4,4h2v-2H7C5.9,15,5,14.1,5,13z"/></g></g></svg>
+            </button>
+            <button title="音楽を再生" id="toggleBGM" class="btn p-0 ms-1" type="button">
+              <svg id="bgmOn" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <svg id="bgmOff" class="d-none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73L19.73 21 21 19.73 4.27 3zM14 7h4V3h-6v5.18l2 2z"/></svg>
+            </button>
+            <button title="ダークモード切替" id="toggleDarkMode" class="fs-4 btn p-0 ms-1" type="button">🌓</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="container" class="container">
+      <noscript>
+        <div class="alert alert-warning">JavaScript を ON にしてください</div>
+      </noscript>
+      <div id="noTTS" class="alert alert-warning d-none">
+        <p>お使いのブラウザは音声読み上げに対応していません。
+        Firefox for Linux は発話モジュールをインストールしてください。例:
+        </p>
+        <pre><code>sudo apt install speech-dispatcher
+sudo apt install festival speech-dispatcher-festival</code></pre>
+      </div>
+      <div id="infoPanel">
+        <div class="row text-center">
+          <div class="col-sm text-start pb-3">
+            <p>日本の都道府県とタイピングを同時に学ぶアプリです。
+            </p>
+            <h6>キーバインド</h6>
+            <table class="table table-sm table-striped">
+              <tbody>
+                <tr><td><kbd>無変換</kbd><kbd class="ms-1">Alt Left</kbd></td><td>ローマ字表示＋音声</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="timePanel" class="col-sm">
+            <div class="alert alert-info">
+              <div class="d-flex flex-wrap justify-content-center">
+                <div class="h5 text-nowrap me-4 notranslate">
+                  <span id="time">300</span>
+                  <span> / 300 sec</span>
+                </div>
+                <div>
+                  <button id="mode" class="btn btn-secondary btn-sm notranslate" type="button">EASY</button>
+                  <div class="form-check form-check-inline form-switch text-nowrap ms-1">
+                    <input class="form-check-input" type="checkbox" id="guideSwitch">
+                    <label class="form-check-label" for="guideSwitch">ガイド</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2">
+                <button id="startButton" class="btn btm-sm btn-primary" type="button">
+                  <kbd>Space</kbd>
+                  <span class="ms-1">スタート</span>
+                  <kbd class="ms-3">Esc</kbd>
+                  <span class="ms-1">リセット</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="gamePanel" class="d-flex flex-column">
+          <div id="mapContainer">
+            <object id="map" type="image/svg+xml" data="map.svg" width="1009" height="982"></object>
+          </div>
+          <div id="playPanel" class="notranslate">
+            <div id="typePanel" class="alert alert-info h2 mb-0 text-center">
+              <div id="japanese">東京都 (とうきょうと)</div>
+              <div id="roma">
+                <span class="inputed"></span><span class="wanted">t</span><span class="remained">oukyouto</span>
+              </div>
+            </div>
+            <div id="keyboard" class="d-none simple-keyboard"></div>
+          </div>
+        </div>
+        <div id="scorePanel" class="text-center pb-3 d-none">
+          <h3 class="pt-3">スコア</h3>
+          <span id="score-emoji" class="emoji">🗼</span>
+          <table class="table table-striped">
+            <tbody>
+              <tr><td>クリア数</td><td><span id="solveCount"></span> <span>都道府県</span></td></tr>
+              <tr><td>総タイプ数</td><td><span id="totalType"></span> <span>回</span></td></tr>
+              <tr><td>スピード</td><td><span id="typeSpeed"></span> <span>回/秒</span></td></tr>
+              <tr><td>ミスタイプ数</td><td><span id="errorType"></span> <span>回</span></td></tr>
+            </tbody>
+          </table>
+          <a id="twitter" target="_blank" href="https://twitter.com/intent/tweet?text=都道府県タイピングで遊んだよ!&url=https://marmooo.github.com/prefectures-typing/&hashtags=都道府県タイピング" class="btn btn-primary" role="button">Twitter でつぶやく</a>
+        </div>
+      </div>
+      <div id="countPanel" class="text-center d-none">
+        <div id="counter" class="notranslate"></div>
+        <span id="counter-emoji" class="emoji">🗻</span>
+      </div>
+    </main>
+    <footer class="pt-4 alert text-center">
+      <div>
+        <a class="px-1" href="/">Home</a>
+        <a class="px-1" href="/terms/">Terms</a>
+        <a class="px-1" href="https://github.com/marmooo/prefectures-typing">Contact</a>
+      </div>
+      <div class="text-muted">&copy; <a href="https://github.com/marmooo">marmooo</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@3.4.52/build/index.min.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
