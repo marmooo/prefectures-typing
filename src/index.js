@@ -496,6 +496,7 @@ function changeMode(event) {
   }
 }
 
+paintPrefecture(13); // 東京
 loadProblems();
 
 document.getElementById("toggleDarkMode").onclick = toggleDarkMode;
