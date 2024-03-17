@@ -90,7 +90,7 @@ const simpleKeyboard = new SimpleKeyboard.default({
     }
   },
 });
-const audioContext = new AudioContext();
+const audioContext = new globalThis.AudioContext();
 const audioBufferCache = {};
 loadAudio("end", "mp3/end.mp3");
 loadAudio("keyboard", "mp3/keyboard.mp3");
@@ -214,7 +214,7 @@ function loadVoices() {
 
 function loopVoice(text, n) {
   speechSynthesis.cancel();
-  const msg = new SpeechSynthesisUtterance(text);
+  const msg = new globalThis.SpeechSynthesisUtterance(text);
   msg.voice = japaneseVoices[Math.floor(Math.random() * japaneseVoices.length)];
   msg.lang = "ja-JP";
   for (let i = 0; i < n; i++) {
@@ -424,7 +424,7 @@ function countdown() {
       countPanel.classList.add("d-none");
       infoPanel.classList.remove("d-none");
       scorePanel.classList.add("d-none");
-      window.scrollTo({
+      globalThis.scrollTo({
         top: document.getElementById("typePanel").getBoundingClientRect().top,
         behavior: "auto",
       });
