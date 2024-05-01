@@ -1,3 +1,4 @@
+import simpleKeyboard from "https://cdn.jsdelivr.net/npm/simple-keyboard@3.7.77/+esm";
 import { Romaji } from "https://cdn.jsdelivr.net/npm/@marmooo/romaji/+esm";
 
 const gamePanel = document.getElementById("gamePanel");
@@ -55,7 +56,7 @@ const keyboardDisplay = {
   "{altRight}": "Alt",
   "🌏": (navigator.language.startsWith("ja")) ? "🇯🇵" : "🇺🇸",
 };
-const simpleKeyboard = new SimpleKeyboard.default({
+const keyboard = new simpleKeyboard.default({
   layout: (navigator.language.startsWith("ja")) ? layout109 : layout104,
   display: keyboardDisplay,
   onInit: () => {
@@ -70,15 +71,15 @@ const simpleKeyboard = new SimpleKeyboard.default({
       case "変換":
         return typeEventKey("Convert");
       case "🌏": {
-        if (simpleKeyboard.options.layout == layout109) {
+        if (keyboard.options.layout == layout109) {
           keyboardDisplay["🌏"] = "🇺🇸";
-          simpleKeyboard.setOptions({
+          keyboard.setOptions({
             layout: layout104,
             display: keyboardDisplay,
           });
         } else {
           keyboardDisplay["🌏"] = "🇯🇵";
-          simpleKeyboard.setOptions({
+          keyboard.setOptions({
             layout: layout109,
             display: keyboardDisplay,
           });
@@ -245,23 +246,23 @@ function nextProblem() {
 
 function removeGuide(key) {
   if (key == " ") key = "{space}";
-  const button = simpleKeyboard.getButtonElement(key);
+  const button = keyboard.getButtonElement(key);
   if (button) {
     button.classList.remove("guide");
-    simpleKeyboard.setOptions({ layoutName: "default" });
+    keyboard.setOptions({ layoutName: "default" });
   } else {
-    const shift = simpleKeyboard.getButtonElement("{shift}");
+    const shift = keyboard.getButtonElement("{shift}");
     if (shift) shift.classList.remove("guide");
   }
 }
 
 function showGuide(key) {
   if (key == " ") key = "{space}";
-  const button = simpleKeyboard.getButtonElement(key);
+  const button = keyboard.getButtonElement(key);
   if (button) {
     button.classList.add("guide");
   } else {
-    const shift = simpleKeyboard.getButtonElement("{shift}");
+    const shift = keyboard.getButtonElement("{shift}");
     if (shift) shift.classList.add("guide");
   }
 }
