@@ -402,6 +402,7 @@ function countdown() {
   if (countdowning) return;
   countdowning = true;
   normalCount = errorCount = solveCount = 0;
+  if (localStorage.getItem("bgm") == 1) bgm.play();
   document.getElementById("guideSwitch").disabled = true;
   document.getElementById("virtualKeyboard").disabled = true;
   gamePanel.classList.add("d-none");
@@ -431,9 +432,6 @@ function countdown() {
       });
       typable();
       startTypeTimer();
-      if (localStorage.getItem("bgm") == 1) {
-        bgm.play();
-      }
     }
   }, 1000);
 }
