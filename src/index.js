@@ -282,11 +282,7 @@ function typeEventKey(key) {
     case "NonConvert": {
       loopVoice(problem.kanji, 1);
       japanese.textContent = `${problem.kanji} (${problem.yomi})`;
-      const visibility = "visible";
-      japanese.style.visibility = visibility;
-      const children = romaNode.children;
-      children[1].style.visibility = visibility;
-      children[2].style.visibility = visibility;
+      changeVisibility("visible");
       downTime(5);
       return;
     }
@@ -358,6 +354,13 @@ function paintPrefecture(prefectureId) {
   });
 }
 
+function changeVisibility(visibility) {
+  const children = romaNode.children;
+  children[1].style.visibility = visibility;
+  children[2].style.visibility = visibility;
+  japanese.style.visibility = visibility;
+}
+
 function typable() {
   if (solveCount >= problems.length) {
     speechSynthesis.cancel();
@@ -379,10 +382,7 @@ function typable() {
 
     if (mode.textContent == "EASY") loopVoice(problem.kanji, 1);
     const visibility = (mode.textContent == "EASY") ? "visible" : "hidden";
-    children[1].style.visibility = visibility;
-    children[2].style.visibility = visibility;
-    japanese.style.visibility = visibility;
-
+    changeVisibility(visibility);
     if (guide) {
       if (prevProblem) {
         const prevNode = prevProblem.romaji.currentNode;
@@ -488,11 +488,15 @@ function scoring() {
 }
 
 function changeMode(event) {
+  normalCount = errorCount = solveCount = 0;
+  document.getElementById("time").textContent = gameTime;
   if (event.target.textContent == "EASY") {
     event.target.textContent = "HARD";
   } else {
     event.target.textContent = "EASY";
   }
+  const visibility = (mode.textContent == "EASY") ? "visible" : "hidden";
+  changeVisibility(visibility);
 }
 
 paintPrefecture(13); // 東京
