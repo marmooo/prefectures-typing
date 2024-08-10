@@ -265,6 +265,15 @@ function nextProblem() {
   typable();
 }
 
+function removePrevGuide(problem) {
+  if (!problem) return;
+  const prevNode = problem.romaji.currentNode;
+  if (!prevNode) return;
+  for (const key of prevNode.children.keys()) {
+    removeGuide(key);
+  }
+}
+
 function removeGuide(key) {
   if (key == " ") key = "{space}";
   const button = keyboard.getButtonElement(key);
@@ -405,14 +414,7 @@ function typable() {
     const visibility = (mode.textContent == "EASY") ? "visible" : "hidden";
     changeVisibility(visibility);
     if (guide) {
-      if (prevProblem) {
-        const prevNode = prevProblem.romaji.currentNode;
-        if (prevNode) {
-          for (const key of prevNode.children.keys()) {
-            removeGuide(key);
-          }
-        }
-      }
+      removePrevGuide(prevProblem);
       const nextKey = problem.romaji.currentNode.children.keys().next().value;
       showGuide(nextKey);
     }
@@ -439,6 +441,7 @@ function countdown() {
     } else {
       countdowning = false;
       playing = true;
+      removePrevGuide(problem);
       normalCount = errorCount = solveCount = 0;
       clearInterval(timer);
       document.getElementById("guideSwitch").disabled = false;
