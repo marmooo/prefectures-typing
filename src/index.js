@@ -451,7 +451,7 @@ function countdown() {
       infoPanel.classList.remove("d-none");
       scorePanel.classList.add("d-none");
       globalThis.scrollTo({
-        top: document.getElementById("typePanel").getBoundingClientRect().top,
+        top: document.getElementById("gamePanel").getBoundingClientRect().top,
         behavior: "auto",
       });
       typable();
