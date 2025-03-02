@@ -128,20 +128,7 @@ sudo apt install festival speech-dispatcher-festival</code></pre>
             </div>
           </div>
         </div>
-        <div id="gamePanel" class="position-relative overflow-hidden">
-          <div id="mapContainer">
-            <object id="map" title="map" type="image/svg+xml" data="map.svg" width="1009" height="982" inert></object>
-          </div>
-          <div id="playPanel" class="notranslate">
-            <div id="typePanel" class="alert alert-info h2 mb-0 text-center">
-              <div id="japanese">東京 (とうきょう)</div>
-              <div id="roma">
-                <span class="inputed"></span><span class="wanted">t</span><span class="remained">oukyou</span>
-              </div>
-            </div>
-            <div id="keyboard" class="d-none simple-keyboard"></div>
-          </div>
-        </div>
+        <div id="gamePanel"></div>
         <div id="scorePanel" class="text-center pb-3 d-none">
           <h3 class="pt-3">スコア</h3>
           <span id="score-emoji" class="emoji">🗼</span>
@@ -170,6 +157,18 @@ sudo apt install festival speech-dispatcher-festival</code></pre>
       <div class="text-muted">&copy; <a href="https://github.com/marmooo">marmooo</a>
       </div>
     </footer>
+    <template id="gamePanelTemplate">
+      <div id="mapContainer">
+        <object id="map" title="map" type="image/svg+xml" data="map.svg" width="1009" height="982" inert></object>
+      </div>
+      <div id="typePanel" class="alert alert-info h2 mb-0 text-center notranslate">
+        <div id="japanese">東京 (とうきょう)</div>
+        <div id="roma">
+          <span class="inputed"></span><span class="wanted">t</span><span class="remained">oukyou</span>
+        </div>
+      </div>
+      <div id="keyboard" class="d-none simple-keyboard notranslate"></div>
+    </template>
     <script type="module" src="index.js"></script>
   </body>
 </html>
