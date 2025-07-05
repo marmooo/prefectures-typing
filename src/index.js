@@ -429,6 +429,11 @@ function typable() {
 }
 
 function countdown() {
+  const mapContainer = document.getElementById("mapContainer");
+  const typePanel = document.getElementById("typePanel");
+  const keyboardPanel = document.getElementById("keyboard");
+  mapContainer.after(typePanel, keyboardPanel);
+
   if (countdowning) return;
   countdowning = true;
   if (localStorage.getItem("bgm") == 1) bgm.play();
