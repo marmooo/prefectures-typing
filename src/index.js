@@ -460,7 +460,7 @@ function countdown() {
       infoPanel.classList.remove("d-none");
       scorePanel.classList.add("d-none");
       globalThis.scrollTo({
-        top: document.getElementById("gamePanel").getBoundingClientRect().top,
+        top: document.getElementById("mapContainer").getBoundingClientRect().top,
         behavior: "auto",
       });
       typable();
