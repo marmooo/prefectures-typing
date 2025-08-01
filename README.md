@@ -4,7 +4,9 @@
 
 ## Build
 
-- `bash build.sh`
+```
+bash build.sh
+```
 
 ## Attribution
 
