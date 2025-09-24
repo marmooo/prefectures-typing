@@ -277,7 +277,7 @@ function initEmojiParticle() {
   });
   canvas.width = document.documentElement.clientWidth;
   canvas.height = document.documentElement.clientHeight;
-  document.body.prepend(canvas);
+  document.body.appendChild(canvas);
 
   const offscreen = canvas.transferControlToOffscreen();
   const worker = createWorker();
